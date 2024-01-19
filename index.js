@@ -1,25 +1,28 @@
-// Desafio claficador de nível de Herói//
-let heroi = "Fernando"
-let experienciaDoHeroi = 1000
+function calcularNivelRankeadas(vitorias, derrotas) {
+    // Calcula o saldo de Rankeadas
+    let saldoVitorias = vitorias - derrotas;
 
-let nivelDoHeroi;
+    // Determina o nível com base no saldo de vitórias
+    let nivel;
+    if (vitorias < 10) {
+        nivel = "Ferro";
+    } else if (vitorias >= 11 && vitorias <= 20) {
+        nivel = "Bronze";
+    } else if (vitorias >= 21 && vitorias <= 50) {
+        nivel = "Prata";
+    } else if (vitorias >= 51 && vitorias <= 80) {
+        nivel = "Ouro";
+    } else if (vitorias >= 81 && vitorias <= 90) {
+        nivel = "Diamante";
+    } else if (vitorias >= 91 && vitorias <= 100) {
+        nivel = "Lendário";
+    } else {
+        nivel = "Imortal";
+    }
 
-if (experienciaDoHeroi < 1000) {
-    nivelDoHeroi = "Ferro";
-} else if (experienciaDoHeroi <= 2000){
-    nivelDoHeroi = "Bronze";
-} else if (experienciaDoHeroi <= 5000){
-    nivelDoHeroi = "Prata";
-} else if (experienciaDoHeroi <= 7000){
-    nivelDoHeroi = "Ouro";
-} else if (experienciaDoHeroi <= 8000){
-    nivelDoHeroi = "Platina";
-} else if (experienciaDoHeroi <= 9000){
-    nivelDoHeroi = "Ascendente";
-} else if (experienciaDoHeroi <= 10000){
-    nivelDoHeroi = "Imortal";
-} else {
-    nivelDoHeroi = "Radiante";
+    // Exibe a mensagem final
+    console.log(`O Herói tem um saldo de ${saldoVitorias} e está no nível de ${nivel}`);
 }
 
-console.log("heroi de nome Fernando está no nivél " + nivelDoHeroi)
+// Exemplo de uso da função
+calcularNivelRankeadas(25, 5);
